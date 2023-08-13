@@ -1,3 +1,13 @@
+baseurl: https://www.yooou.me/
+
+paginate: 5
+
+permalinks:
+    post: /p/:slug/
+    page: /:slug/
+
+DefaultContentLanguage: zh-cn
+
 module:
     hugoVersion:
         extended: true
@@ -8,7 +18,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: /favicon.ico
 
     footer:
         since:
@@ -20,7 +30,7 @@ params:
 
     sidebar:
         compact: false
-        emoji:
+        emoji: 🍥
         subtitle:
         avatar:
             enabled: true
@@ -28,7 +38,7 @@ params:
             src: img/avatar.png
 
     article:
-        math: false
+        math: true
         toc: true
         readingTime: true
         license:
@@ -141,3 +151,36 @@ params:
             enabled: true
         content:
             enabled: true
+
+menu:
+    main: []
+    social: []
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: false
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
